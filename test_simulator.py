@@ -15,6 +15,15 @@ class TestSimulator(TestCase):
         """
         self.assertIsInstance(self.sim.update(), World)
 
+    def test_update_rule(self):
+        """
+        test dit en dat
+        :return:
+        """
+        self.sim.update()
+        self.assertEqual(self.sim.world.world[0][0], 1)
+
+
     def test_get_generation(self):
         """
         Tests whether get_generation returns the correct value:
