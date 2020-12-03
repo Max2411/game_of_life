@@ -18,8 +18,8 @@ class Simulator:
         else:
             self.world = world
 
-    def remove_zero(self, lst):
-        return None
+    def non_zero(self, lst):
+        return 2
 
     def update(self) -> World:
         """

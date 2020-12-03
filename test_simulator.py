@@ -12,7 +12,7 @@ class TestSimulator(TestCase):
     def test_remove_zero(self):
         test = [0, 0, 1, 0, 0, 1, 0]
         ans = 2
-        self.assertEqual(self.sim.remove_zero(test), ans)
+        self.assertEqual(self.sim.non_zero(test), ans)
 
     def test_update(self):
         """
