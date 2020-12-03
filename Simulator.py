@@ -19,7 +19,7 @@ class Simulator:
             self.world = world
 
     def non_zero(self, lst):
-        return 2
+        return len(list(filter((0).__ne__, lst)))
 
     def update(self) -> World:
         """
