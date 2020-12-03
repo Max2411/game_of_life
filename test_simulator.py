@@ -26,12 +26,9 @@ class TestSimulator(TestCase):
         :return:
         """
         self.sim.update()
-        self.sim.world.set(1,1,0)
-        lst = self.sim.world.get_neighbours(1,1)
-        if self.sim.non_zero(lst) < 2:
-            self.assertEqual(self.sim.world.world[1][1], 0)
+        self.sim.world.set(1,1,1)
+        self.assertEqual(self.sim.world.world[1][1], 0)
 
-        self.assertEqual(self.sim.world.world[0][0], 1)
 
 
     def test_get_generation(self):
