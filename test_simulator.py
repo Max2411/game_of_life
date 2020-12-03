@@ -20,12 +20,17 @@ class TestSimulator(TestCase):
         """
         self.assertIsInstance(self.sim.update(), World)
 
-    def test_update_rule(self):
+    def test_update_rule1(self):
         """
         test dit en dat
         :return:
         """
         self.sim.update()
+        self.sim.world.set(1,1,0)
+        lst = self.sim.world.get_neighbours(1,1)
+        if self.sim.non_zero(lst) < 2:
+            self.assertEqual(self.sim.world.world[1][1], 0)
+
         self.assertEqual(self.sim.world.world[0][0], 1)
 
 
