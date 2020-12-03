@@ -37,7 +37,8 @@ class Simulator:
                 neighbors = self.non_zero(self.world.get_neighbours(x,y))
                 if neighbors < 2:
                     self.world.set(x,y,0)
-        self.world.set(1,1,0)
+        self.world.set(1,2,0)
+
 
         #TODO: Do something to evolve the generation
 
