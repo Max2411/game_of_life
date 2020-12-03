@@ -39,6 +39,7 @@ class Simulator:
                     self.world.set(x,y,0)
                 elif neighbors > 3:
                     self.world.set(x, y, 0)
+        self.world.set(0,0,1)
 
 
 
