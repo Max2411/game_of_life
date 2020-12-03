@@ -19,7 +19,9 @@ class Simulator:
             self.world = world
 
     def non_zero(self, lst):
-        return len(list(filter((0).__ne__, lst)))
+        lst1 = list(filter(lambda x: x != 0, lst))
+        num = len(lst1)
+        return num
 
     def update(self) -> World:
         """
@@ -29,7 +31,9 @@ class Simulator:
         """
         self.generation += 1
         for x in range(self.world.width):
+
             for y in range(self.world.height):
+
                 neighbors = self.non_zero(self.world.get_neighbours(x,y))
                 if neighbors < 2:
                     self.world.set(x,y,0)
