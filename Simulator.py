@@ -42,10 +42,12 @@ class Simulator:
                 # rule 2
                 elif neighbors > 3:
                     self.world.set(x, y, 0)
+                elif neighbors == 3:
+                    self.world.set(x, y, 1)
                 # rule 3
                 else:
                     pass
-        self.world.set(0,0,1)
+
 
         # TODO: Do something to evolve the generation
 
