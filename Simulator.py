@@ -35,11 +35,15 @@ class Simulator:
             for y in range(self.world.height):
 
                 neighbors = self.non_zero(self.world.get_neighbours(x,y))
+                # rule1
                 if neighbors < 2:
                     self.world.set(x,y,0)
+                # rule 2
                 elif neighbors > 3:
                     self.world.set(x, y, 0)
-        self.world.set(0,0,1)
+                # rule 3
+                else:
+                    pass
 
 
 
