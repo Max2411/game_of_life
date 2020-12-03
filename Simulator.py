@@ -18,6 +18,9 @@ class Simulator:
         else:
             self.world = world
 
+    def remove_zero(self,lst):
+        return None
+
     def update(self) -> World:
         """
         Updates the state of the world to the next generation. Uses rules for evolution.
@@ -25,8 +28,9 @@ class Simulator:
         :return: New state of the world.
         """
         self.generation += 1
-        self.world.world[0][0] = 1
-
+        self.world.world.set(0,0,1)
+        # self.world.world[0][0] = 1
+        print(self.world.get_neighbours(0,1))
         #TODO: Do something to evolve the generation
 
         return self.world

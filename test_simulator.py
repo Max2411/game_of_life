@@ -15,11 +15,17 @@ class TestSimulator(TestCase):
         """
         self.assertIsInstance(self.sim.update(), World)
 
+    def test_remove_zero(self):
+        test = [0,0,1,0,0,1,0]
+        ans = [1,1]
+        self.assertEqual(self.sim.remove_zero(test),ans)
+
     def test_update_rule(self):
         """
         test dit en dat
         :return:
         """
+        # if self.sim.world.get_neighbours(0,1)
         self.sim.update()
         self.assertEqual(self.sim.world.world[0][0], 1)
 
