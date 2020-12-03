@@ -25,8 +25,9 @@ class TestSimulator(TestCase):
         test dit en dat
         :return:
         """
-        self.sim.update()
+
         self.sim.world.set(1,1,1)
+        self.sim.update()
         self.assertEqual(self.sim.world.world[1][1], 0)
 
 

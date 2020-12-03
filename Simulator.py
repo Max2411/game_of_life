@@ -28,7 +28,7 @@ class Simulator:
         :return: New state of the world.
         """
         self.generation += 1
-        self.world.world[0][0] = 1
+        self.world.set(1,1,0)
 
         #TODO: Do something to evolve the generation
 
