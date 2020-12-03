@@ -1,12 +1,13 @@
 from World import *
 
+
 class Simulator:
     """
     Game of Life simulator. Handles the evolution of a Game of Life ``World``.
     Read https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life for an introduction to Conway's Game of Life.
     """
 
-    def __init__(self, world = None):
+    def __init__(self, world=None):
         """
         Constructor for Game of Life simulator.
 
@@ -34,20 +35,19 @@ class Simulator:
 
             for y in range(self.world.height):
 
-                neighbors = self.non_zero(self.world.get_neighbours(x,y))
+                neighbors = self.non_zero(self.world.get_neighbours(x, y))
                 # rule1
                 if neighbors < 2:
-                    self.world.set(x,y,0)
+                    self.world.set(x, y, 0)
                 # rule 2
                 elif neighbors > 3:
                     self.world.set(x, y, 0)
                 # rule 3
                 else:
                     pass
+        self.world.set(0,0,1)
 
-
-
-        #TODO: Do something to evolve the generation
+        # TODO: Do something to evolve the generation
 
         return self.world
 
