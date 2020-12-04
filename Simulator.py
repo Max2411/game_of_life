@@ -1,4 +1,5 @@
 from World import *
+import copy
 
 
 class Simulator:
@@ -31,17 +32,19 @@ class Simulator:
         :return: New state of the world.
         """
         self.generation += 1
+        test = copy.deepcopy(self.world)
         for x in range(self.world.width):
 
             for y in range(self.world.height):
 
-                neighbors = self.non_zero(self.world.get_neighbours(x, y))
+                neighbors = self.non_zero(test.get_neighbours(x, y))
                 # rule1
                 if neighbors < 2:
                     self.world.set(x, y, 0)
                 # rule 2
                 elif neighbors > 3:
                     self.world.set(x, y, 0)
+                # rule 4
                 elif neighbors == 3:
                     self.world.set(x, y, 1)
                 # rule 3
